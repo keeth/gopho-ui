@@ -18,7 +18,9 @@ const currentPath = R.path(['route', 'location', 'pathname']);
 
 const isRoot = path => ['/', '/p'].indexOf(path) !== -1;
 
-const api = 'http://localhost:3333';
+const api = process.env.NODE_ENV === 'production'
+  ? ''
+  : 'http://localhost:3333';
 
 function parentPath(path) {
   const parts = path.split(/\//);
@@ -171,7 +173,7 @@ const Thumbs = connect(R.applySpec({ selectedImage }), {
             <FullSizeImage
               src={`${api}/get?path=${encodeURIComponent(
                 selectedImage.original.path
-              )}`}
+              ).replace(/'/, '%27')}`}
               alt={selectedImage.name}
               fit="contain"
             />
