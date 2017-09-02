@@ -11,3 +11,6 @@ deploy:
 before_deploy:
   - npm run build
   - cd build && zip -r ../build.zip * && cd ..
+cache:
+  directories:
+  - node_modules
