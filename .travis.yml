@@ -8,6 +8,7 @@ deploy:
   file: build.zip
   on:
     tags: true
+  skip_cleanup: true
 before_deploy:
   - npm run build
   - cd build && zip -r ../build.zip * && cd ..
