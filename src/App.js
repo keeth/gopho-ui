@@ -190,7 +190,7 @@ const Browser = R.compose(
     ({ path }) => `${api}/ls?path=${encodeURIComponent(apiPath(path) || '/')}`
   ),
   spinnerWhileLoading(R.prop('loading')),
-  handleError(R.prop('error'))
+  handleError(R.path(['error', 'message']))
 )(({ data }) =>
   <div style={{ display: 'flex', flexDirection: 'row', height: '100%' }}>
     <Nav
