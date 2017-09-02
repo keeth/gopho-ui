@@ -7,7 +7,7 @@ deploy:
     secure: GiWE0Rfje3l34SXlXHQfwR/6NmWbqCjMoI2+AXj19afOj7K9UWRo1154V56G+Ho2Ce6pkq9OiHfV06Zq+PLQAjeoOWk+T30cg3DSECAUYeUS/ZrDErJP9i7ssfQj2QUKXC+r945+oEv9SSTZQKIKWcf3Xii8gLbZAkGv/DpycSw1rYQmxLQoV9AZGTc1aD3Pda7xfK1fgRRQ31xes4cjK23fBFsjVIFvQCYhEFtN9nhJwn8olMItXUXPi0nodeBqDbyRRFmIPGIQHXoMavN0m4ETCPGE/DcfwsBi8h1mwN9NTUGoweFnVfbhPyGWxLFQyee5MwRA1gunvlgw95zoOlFHMSTE9L3YTgLoPHLuVni49oVTlAB2InOqMXLJcxP96cetFu/iRY86W+i2YSzKQiHaLLX6BEhrXGVdopJbUwVmnVvb2f7BLnUVkhA0XqF5hhH7612Wcp+iLATt5g4lRfQl57OFZ+WiNSk8qL1nK5Fo/bh6UBTaD6JNhlqTNiOuGIQfHEhCEIvMRgHESkCN+PXCPyVoVCgrL4xqzp6zaG1yxMhxQZxS4JCzTsYDRzvdMMaTVDRBQ26rqPoLtRCrFgpSMqLV/T1+6u1lI0QG81BdSTbaFEqi05KcTF0z4CsV0Z0VpnXOw0q45/Z+DlSjwLYesIFEseX/8lnigVlrHlc=
   file: build.zip
   on:
-    repo: keeth/gopho-ui
+    tags: true
 before_deploy:
   - npm run build
   - cd build && zip -r ../build.zip * && cd ..
