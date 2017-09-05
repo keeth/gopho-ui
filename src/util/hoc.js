@@ -27,3 +27,6 @@ export const handleError = mapPropsToErrorMessage =>
       renderComponent(Error)
     )
   );
+
+export const handleErrorWith = (isError, Component) =>
+  branch(isError, R.compose(renderComponent(Component)));
