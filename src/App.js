@@ -192,7 +192,7 @@ const Thumbs = connect(R.applySpec({ selectedImage }), {
             <FullSizeImage
               src={`${api}/get?path=${encodeURIComponent(
                 selectedImage.original.path
-              ).replace(/'/, '%27')}`}
+              ).replace(/'/g, '%27')}`}
               alt={selectedImage.name}
               fit="contain"
             />
